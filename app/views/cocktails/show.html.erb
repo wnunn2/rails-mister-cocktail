@@ -1,0 +1,32 @@
+<div class='container'>
+  <div class='row'>
+    <h1><%= @cocktail.name %></h1>
+  </div>
+  <div class='ingredient-card d-flex p-3'>
+
+        <div class="ingredient-name">
+          <% @cocktail.ingredients.each do |ingredient| %>
+              <div>
+                <%= ingredient.name %>
+              </div>
+          <% end %>
+        </div>
+
+        <div class="dose-description">
+          <% @cocktail.doses.each do |dose| %>
+            <div>
+              <span class="badge badge-primary badge-pill"><%= dose.description %></span>
+            </div>
+          <% end %>
+        </div>
+
+  </div>
+  <div class='btn btn-primary my-3'>
+    <%= link_to new_cocktail_dose_path(@cocktail) do %>
+      <i class='fas fa-sort-numeric-up'> Add Doses</i>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to 'Back to Index', cocktails_path, class: 'btn-primary' %>
+  </div>
+</div>

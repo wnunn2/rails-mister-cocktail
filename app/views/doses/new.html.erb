@@ -1,0 +1,10 @@
+<div class='container'>
+  <div class='row my-3'>
+    <h1>Add Ingredient and Quantity</h1>
+  </div>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, include_blank: false %>
+  <%= f.submit "Add Ingredient", class: "btn btn-primary cocktail-hover" %>
+  <% end %>
+</div>

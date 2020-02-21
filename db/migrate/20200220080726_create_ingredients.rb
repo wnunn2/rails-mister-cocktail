@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+# ingredients migration (each ingredient has a name)
+class CreateIngredients < ActiveRecord::Migration[5.2]
+  def change
+    create_table :ingredients do |t|
+      t.string :name
+
+      t.timestamps
+    end
+  end
+end
